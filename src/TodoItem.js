@@ -6,7 +6,7 @@ function TodoItem(props){
         <span className={`Icon Icon-check 
         ${props.completed && 'Icon-check--active'}`}>v
           V
-          {/* {props.completed} */}
+          
           </span>
         <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
           {props.text}</p>
