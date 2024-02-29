@@ -13,12 +13,19 @@ const defaultTodos = [
 ]
 
 function App() {
+
+  const [searchValue, setSearchValue] = React.useState('');
+  console.log(searchValue);
+  
   return (
     <React.Fragment>
 
       <TodoCounter completed={16} total={25}/>
 
-      <TodoSearch />
+      <TodoSearch 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
 
       <TodoList >
         {defaultTodos.map(todo => (
