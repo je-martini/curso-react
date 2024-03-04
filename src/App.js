@@ -20,7 +20,14 @@ function App() {
   
   const totalTodos = todos.length;
   
-  console.log(todos);
+  
+
+  console.log(searchValue === 'estudiar')
+
+  console.log(defaultTodos)
+
+  const item1 = todos.find( e => e.text === searchValue)
+  console.log(item1)
   
   return (
     <React.Fragment>
