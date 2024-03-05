@@ -1,4 +1,6 @@
 import './TodoItem.css';
+import { FaCheck } from "react-icons/fa";
+import { TiDeleteOutline } from "react-icons/ti";
 
 function TodoItem(props){
     return(
@@ -8,7 +10,7 @@ function TodoItem(props){
         ${props.completed && "Icon-check--active"}`}
         onClick={props.onComplete}
         >
-          V
+          <FaCheck />
           
           </span>
         <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
@@ -17,7 +19,7 @@ function TodoItem(props){
          className="Icon Icon-delete"
          onClick={props.onDelete} 
         >
-          x
+          <TiDeleteOutline />
         </span>
       </li>
     );
