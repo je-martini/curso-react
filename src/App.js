@@ -8,7 +8,7 @@ import React from 'react';
 const defaultTodos = [
   {text: "hacer ejercicio", completed: true},
   {text: "trabajar ", completed: false},
-  {text: "Estudiar ", completed: false},
+  {text: "Estudiar ", completed: true},
   {text: "Cocinar ", completed: true}
 ];
 
@@ -56,7 +56,8 @@ function App() {
 
       <TodoCounter 
         completed={completedTodos} 
-        total={totalTodos}/>
+        total={totalTodos}
+      />
 
       <TodoSearch 
         searchValue={searchValue}
@@ -65,6 +66,7 @@ function App() {
 
       <TodoList >
         {searchedTodos.map(todo => (
+          
           <TodoItem 
             key={todo.text}
             text={todo.text}
