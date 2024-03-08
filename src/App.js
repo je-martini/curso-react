@@ -8,7 +8,7 @@ import React from 'react';
 const defaultTodos = [
   {text: "hacer ejercicio", completed: true},
   {text: "trabajar ", completed: false},
-  {text: "Estudiar ", completed: true},
+  {text: "Estudiar ", completed: false},
   {text: "Cocinar ", completed: true}
 ];
 
