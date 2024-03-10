@@ -11,13 +11,23 @@ import React from 'react';
 //   {text: "Estudiar ", completed: false},
 //   {text: "Cocinar ", completed: true}
 // ];
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))
 
 
 
 function App() {
 
   const localStorageTodos = localStorage.getItem('TODOS_V1')
-  let parsedTodos = JSON.parse(localStorageTodos);
+  let parsedTodos;
+
+  if(!localStorageTodos){
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else{
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+  // parsedTodos = JSON.parse(localStorageTodos);
 
   const [todos, setTodos] = React.useState(parsedTodos);
 
@@ -35,6 +45,11 @@ function App() {
     }
   )
 
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos))
+    setTodos(newTodos);
+  }
+
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
@@ -42,7 +57,7 @@ function App() {
     );
     newTodos[todoIndex].completed = true;
     
-    setTodos(newTodos);
+    saveTodos(newTodos);
   
   }
 
@@ -53,7 +68,7 @@ function App() {
     );
     newTodos.splice(todoIndex, 1);
     
-    setTodos(newTodos);
+    saveTodos(newTodos);
   
   }
 
