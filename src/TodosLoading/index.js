@@ -2,7 +2,7 @@ import React from "react"
 import "./TodosLoanding.css"
 
 function TodosLoanding(){
-    console.log('cargando')
+    
     return (
         <div className="LoadingTodo-container">
             <span className="LoadingTodo-completeIcon"></span>

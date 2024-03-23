@@ -7,8 +7,8 @@ function EmptyTodos() {
                 <span className="LoadingTodo-completeIcon"></span>
                 <p className="LoadingTodo-text">it's time to create your firts to do</p>
                 <span className="LoadingTodo-deleteIcon"></span>
-    
             </div>
+            
         
     )
 }
