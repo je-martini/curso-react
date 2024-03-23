@@ -34,10 +34,19 @@ function AppUI({
     
           <TodoList >
 
-          { loading && <TodosLoanding/>}
+          { loading && (<>
+          <TodosLoanding/>
+          <TodosLoanding/>
+          <TodosLoanding/>
+          </>)}
           { error && <TodosError/>}
           {(!loading && searchedTodos.length === 0) &&
-           <EmptyTodos/>}
+           (<>
+           <EmptyTodos/>
+           <EmptyTodos/>
+           <EmptyTodos/>
+           </>)
+           }
 
             {searchedTodos.map(todo => (
               
