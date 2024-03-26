@@ -7,6 +7,7 @@ import { TodosLoanding } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoContext } from '../TodoContext';
+import { Modal } from '../Modal';
 import React from 'react';
 
 function AppUI() {
@@ -16,19 +17,15 @@ function AppUI() {
     searchedTodos,
     completeTodo,
     deleteTodo,
+    openModal,
+    setOpenModal
   } = React.useContext(TodoContext)
     return (
         <React.Fragment>
     
-          <TodoCounter 
-            // completed={completedTodos} 
-            // total={totalTodos}
-          />
+          <TodoCounter/>
     
-          <TodoSearch 
-            // searchValue={searchValue}
-            // setSearchValue={setSearchValue}
-          />
+          <TodoSearch/>
 
               
             <TodoList >
@@ -60,6 +57,13 @@ function AppUI() {
             </TodoList>
     
           <CreateTodoButton />
+
+          {openModal && (
+            <Modal>
+
+            teletrnasportar 
+            </Modal>
+          )}
     
         </React.Fragment>
       );
